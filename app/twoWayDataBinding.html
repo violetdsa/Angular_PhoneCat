@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="phoneCatApp">
+<head>
+  <title>Angular Template Tutorial</title>
+  	 <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-controller="phoneListCtrl">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+			Search : 
+			<input type="text"  ng-model="query"/>
+			
+			
+			Sort By:
+			<select ng-model="orderProp"> 
+				<option value ="name">Alphabetical</option>
+				<option value="age">Newest</option>
+			</select>
+		</div>
+		<div class="col-md-10">
+			<ul class="phones">
+				<li ng-repeat ="phone in phones | filter:query | orderBy:orderProp">
+					Phone Name : {{phone.name}}
+          			<p> Phone Snipet : {{phone.snippet}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

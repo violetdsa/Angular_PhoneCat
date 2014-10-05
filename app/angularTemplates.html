@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="phoneCatApp">
+<head>
+  <title>Angular Template Tutorial</title>
+  	 <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller= "phoneListCtrl">
+
+  	<ul >
+	  <li ng-repeat="phone in phones">
+	 
+	    <span>Phone Name : {{phone.name}}</span>
+	    <p>
+	     	Phone Snippet : {{phone.snippet}}
+	    </p>
+	  </li>  
+	</ul>
+
+</body>
+</html>

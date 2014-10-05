@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="phoneCatApp">
+<head>
+  <title>Angular Template Tutorial</title>
+  	 <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-dist/css/bootstrap.css">
+   <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-controller= "phoneListCtrl">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+
+      Search: <input ng-model="query">
+
+    </div>
+    <div class="col-md-10">
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query">
+          Phone Name : {{phone.name}}
+          <p> Phone Snipet : {{phone.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
